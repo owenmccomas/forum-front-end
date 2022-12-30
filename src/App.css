@@ -47,11 +47,11 @@
 body{
   background-color: #211e1e;
 }
-body .commentBox{
+body .responseBox{
   display: flex;
   /* justify-content:; */
 }
-.textBox {
+.adminBox {
   display: flex;
   direction: row;
   background-color: #e3dac9;
@@ -61,7 +61,7 @@ body .commentBox{
   padding: 1rem;
   /* position: relative; */
 }
-.commentBox {
+.responseBox {
   display: flex;
   justify-content: start;
   background-color: #e3dac9;
@@ -72,7 +72,7 @@ body .commentBox{
   margin-top: 8%;
   /* position: relative; */
 }
-.textBox::before {
+.adminBox::before {
   content: "";
   border-width: 0.5rem;
   border-style: solid;
@@ -82,16 +82,16 @@ body .commentBox{
   left: 1rem;
 }
 
-.textBox p {
+.adminBox p {
   margin: 0;
   font-size: 0.9rem;
 }
-.commentBox p {
+.responseBox p {
   margin: 0;
   font-size: 0.9rem;
 }
 
-.textBox .post-author {
+.adminBox .post-author {
   font-size: 0.8rem;
   color: gray;
   margin-bottom: 0.5rem;

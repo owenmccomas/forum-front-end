@@ -2,7 +2,7 @@ import React from "react";
 import App from "./App";
 import './App.css'
 
-const TextboxList = ({ textboxes }) => {
+const TextBoxes = ({ textboxes }) => {
   return (
     <div className="textbox-list">
       {textboxes.map((textbox, index) => (
@@ -21,4 +21,4 @@ const TextboxList = ({ textboxes }) => {
   );
 };
 
-export default TextboxList;
+export default TextBoxes;

@@ -4,25 +4,28 @@ import TextboxList from './TextBoxes'
 import './App.css'
 
 function App() {
-  const [message, setMessage] = useState('') // Initialize message to an empty string
+  const [messages, setMessages] = useState([])
 
   useEffect(() => {
-    getMessage()
-  }, []) // This will run the effect only once when the component mounts
+    getMessages()
+  }, [])
 
-  const getMessage = () => {    
+  const getMessages = () => {    
     axios
       .get("https://young-waters-82793.herokuapp.com/api/posts")
-      .then(res => setMessage(res.data.message)) // Set message to the value of res.data.message
+      .then(res => setMessages(res.data))
       .catch(err => console.log(err));
-      console.log(message)
+      console.log(messages.text)
   }
 
   return (
     <div className="App">
       <div>
-          <div className='textBox'><p>`Text Box Test Contains .message: `</p></div>
-          <div className='commentBox'><p>Test Comment</p></div>
+        {messages.map((message) => (
+          <div className={message.isAdmin ? 'adminBox' : 'responseBox'}>
+            <p>{message.text}</p>
+          </div>
+        ))}
       </div>
     </div>
   )
